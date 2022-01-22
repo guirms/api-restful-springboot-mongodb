@@ -1,6 +1,5 @@
 package com.javaprojeto.workshopmongo.recursos.exceptions;
 
-import javax.net.ssl.SSLEngineResult.Status;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.http.HttpStatus;
