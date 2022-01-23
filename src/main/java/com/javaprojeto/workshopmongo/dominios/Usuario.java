@@ -1,9 +1,12 @@
 package com.javaprojeto.workshopmongo.dominios;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "usuario") // pois no mongoDB aqui não é apenas uma entidade, mas sim um documento
@@ -15,6 +18,9 @@ public class Usuario implements Serializable {
 	private String id;
 	private String nome;
 	private String email;
+
+	@DBRef(lazy = true) // para referenciar a uma colecao
+	private List<Publicacao> publicacoes = new ArrayList<>();
 
 	public Usuario() {
 	}
@@ -47,6 +53,14 @@ public class Usuario implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public List<Publicacao> getPublicacoes() {
+		return publicacoes;
+	}
+
+	public void setPublicacoes(List<Publicacao> publicacoes) {
+		this.publicacoes = publicacoes;
 	}
 
 	@Override
