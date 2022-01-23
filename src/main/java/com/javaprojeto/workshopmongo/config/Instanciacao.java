@@ -21,8 +21,6 @@ public class Instanciacao implements CommandLineRunner {
 	
 	@Autowired
 	PublicacaoRepositorio publicacaoRepo;
-	
-	
 
 	@Override
 	public void run(String... args) throws Exception {

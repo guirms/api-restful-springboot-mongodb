@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import com.javaprojeto.workshopmongo.dominios.Publicacao;
 import com.javaprojeto.workshopmongo.dominios.Usuario;
 import com.javaprojeto.workshopmongo.dto.UsuarioDTO;
 import com.javaprojeto.workshopmongo.servicos.UsuarioServico;
@@ -54,13 +55,19 @@ public class UsuarioRecurso {
 		servico.deletar(id);
 		return ResponseEntity.noContent().build(); // para retornar sem corpo
 	}
-	
+
 	@PutMapping(value = "/{id}")
 	public ResponseEntity<Void> atualizar(@PathVariable String id, @RequestBody UsuarioDTO objDTO) {
 		Usuario usuario = servico.converterDTO(objDTO);
 		usuario.setId(id);
 		usuario = servico.atualizar(usuario);
 		return ResponseEntity.noContent().build();
+	}
+
+	@GetMapping(value = "/{id}/pubs")
+	public ResponseEntity<List<Publicacao>> encontrarPublicacoes(@PathVariable String id) {
+		Usuario usuario = servico.encontrarPorId(id);
+		return ResponseEntity.ok().body(usuario.getPublicacoes());
 	}
 
 }
