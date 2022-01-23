@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 
 import com.javaprojeto.workshopmongo.dominios.Publicacao;
 import com.javaprojeto.workshopmongo.dominios.Usuario;
+import com.javaprojeto.workshopmongo.dto.AutorDTO;
 import com.javaprojeto.workshopmongo.repositorios.PublicacaoRepositorio;
 import com.javaprojeto.workshopmongo.repositorios.UsuarioRepositorio;
 
@@ -34,8 +35,8 @@ public class Instanciacao implements CommandLineRunner {
 		
 		usuarioRepo.saveAll(Arrays.asList(u1,u2));
 		
-		Publicacao p1 = new Publicacao(null, Instant.parse("2022-01-23T19:53:07Z"), "Partiu viagem", "Vou pra sp", u1);
-		Publicacao p2 = new Publicacao(null, Instant.parse("2022-01-23T19:53:07Z"), "Bom dia", "Acordei bem", u2);
+		Publicacao p1 = new Publicacao(null, Instant.parse("2022-01-23T19:53:07Z"), "Partiu viagem", "Vou pra sp", new AutorDTO(u1));
+		Publicacao p2 = new Publicacao(null, Instant.parse("2022-01-23T19:53:07Z"), "Bom dia", "Acordei bem",  new AutorDTO(u2));
 		
 		publicacaoRepo.saveAll(Arrays.asList(p1,p2));
 		

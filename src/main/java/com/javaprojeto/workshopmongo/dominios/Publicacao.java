@@ -8,6 +8,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.javaprojeto.workshopmongo.dto.AutorDTO;
 
 @Document
 public class Publicacao implements Serializable {
@@ -21,12 +22,12 @@ public class Publicacao implements Serializable {
 	private String titulo;
 	private String corpo;
 
-	private Usuario autor;
+	private AutorDTO autor;
 
 	public Publicacao() {
 	}
 
-	public Publicacao(String id, Instant data, String titulo, String corpo, Usuario autor) {
+	public Publicacao(String id, Instant data, String titulo, String corpo, AutorDTO autor) {
 		this.id = id;
 		this.data = data;
 		this.titulo = titulo;
@@ -66,11 +67,11 @@ public class Publicacao implements Serializable {
 		this.corpo = corpo;
 	}
 
-	public Usuario getAutor() {
+	public AutorDTO getAutor() {
 		return autor;
 	}
 
-	public void setAutor(Usuario autor) {
+	public void setAutor(AutorDTO autor) {
 		this.autor = autor;
 	}
 
