@@ -2,6 +2,8 @@ package com.javaprojeto.workshopmongo.dominios;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import org.springframework.data.annotation.Id;
@@ -9,6 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.javaprojeto.workshopmongo.dto.AutorDTO;
+import com.javaprojeto.workshopmongo.dto.ComentarioDTO;
 
 @Document
 public class Publicacao implements Serializable {
@@ -23,6 +26,8 @@ public class Publicacao implements Serializable {
 	private String corpo;
 
 	private AutorDTO autor;
+
+	private List<ComentarioDTO> comentario = new ArrayList<>();
 
 	public Publicacao() {
 	}
@@ -73,6 +78,14 @@ public class Publicacao implements Serializable {
 
 	public void setAutor(AutorDTO autor) {
 		this.autor = autor;
+	}
+
+	public List<ComentarioDTO> getComentario() {
+		return comentario;
+	}
+
+	public void setComentario(List<ComentarioDTO> comentario) {
+		this.comentario = comentario;
 	}
 
 	@Override
