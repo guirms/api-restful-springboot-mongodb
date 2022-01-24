@@ -10,6 +10,6 @@ import com.javaprojeto.workshopmongo.dominios.Publicacao;
 @Repository
 public interface PublicacaoRepositorio extends MongoRepository<Publicacao, String> {
 	
-	List<Publicacao> findByTituloContaining(String texto);
+	List<Publicacao> findByTituloContainingIgnoreCase(String texto);
 
 }

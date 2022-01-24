@@ -1,5 +1,6 @@
 package com.javaprojeto.workshopmongo.servicos;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,10 @@ public class PublicacaoServico {
 	public Publicacao encontrarPorId(String id) { 
 		Optional<Publicacao> obj = publicacaoRepo.findById(id);
 		return obj.orElseThrow(() -> new ObjetoNaoEncontrado(id));
+	}
+	
+	public List<Publicacao> econtrarPorTitulo(String texto){
+		return publicacaoRepo.findByTituloContainingIgnoreCase(texto);
 	}
 	
 }

@@ -35,12 +35,6 @@ public class UsuarioRecurso {
 		return ResponseEntity.ok().body(listaDTO);
 	}
 
-	@GetMapping(value = "/{id}")
-	public ResponseEntity<UsuarioDTO> encontrarPorId(@PathVariable String id) {
-		Usuario usuario = servico.encontrarPorId(id);
-		return ResponseEntity.ok().body(new UsuarioDTO(usuario));
-	}
-
 	@PostMapping
 	public ResponseEntity<Void> inserir(@RequestBody UsuarioDTO objDTO) {
 		Usuario usuario = servico.converterDTO(objDTO);
