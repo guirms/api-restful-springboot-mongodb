@@ -25,4 +25,8 @@ public class PublicacaoServico {
 		return publicacaoRepo.findByTituloContainingIgnoreCase(texto);
 	}
 	
+	public List<Publicacao> buscarTitulo(String texto){
+		return publicacaoRepo.buscarTitulo(texto);
+	}
+	
 }
