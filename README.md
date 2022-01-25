@@ -1,8 +1,10 @@
-### Projeto Web Service com Spring Boot, JPA e Hibernate<h1 align="center">Banco de dados MySQL manipulado com padrão de projeto DAO</h1>
+### Projeto API Restful com Spring Boot e MongoDB<h1 align="center">Banco de dados MySQL manipulado com padrão de projeto DAO</h1>
 
 >Status: Completo✔️
 
-#### O banco de dados utilizado nesse projeto foi o PostGreeSQL. 
+>Linguagem Utilizada: Java ☕
+
+#### O banco de dados utilizado nesse projeto foi o MongoDB. 
 
 ## Recursos utilizados:
 - JPA.
