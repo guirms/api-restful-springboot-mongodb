@@ -1,5 +1,6 @@
 package com.javaprojeto.workshopmongo.recursos;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,13 +27,25 @@ public class PublicacaoRecurso {
 		Publicacao pub = servico.encontrarPorId(id);
 		return ResponseEntity.ok().body(pub);
 	}
-	
+
 	@GetMapping(value = "/titulo")
-	public ResponseEntity<List<Publicacao>> encontrarPorTitulo(@RequestParam(value="text", defaultValue = "") String texto) {
+	public ResponseEntity<List<Publicacao>> encontrarPorTitulo(
+			@RequestParam(value = "text", defaultValue = "") String texto) {
 		texto = URL.decodificarParam(texto);
 		List<Publicacao> lista = servico.econtrarPorTitulo(texto);
 		return ResponseEntity.ok().body(lista);
 	}
-	
+
+	@GetMapping(value = "/busca")
+	public ResponseEntity<List<Publicacao>> buscaCompleta(
+			@RequestParam(value = "text", defaultValue = "") String texto,
+			@RequestParam(value = "dataInicio", defaultValue = "") String dataInicio,
+			@RequestParam(value = "dataFim", defaultValue = "") String dataFim) {
+		texto = URL.decodificarParam(texto);
+		Date inicio = URL.converterData(dataInicio, new Date(0L));
+		Date fim = URL.converterData(dataFim, new Date());
+		List<Publicacao> lista = servico.buscaCompleta(texto, inicio, fim);
+		return ResponseEntity.ok().body(lista);
+	}
 
 }

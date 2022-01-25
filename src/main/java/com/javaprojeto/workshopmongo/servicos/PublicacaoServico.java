@@ -1,5 +1,6 @@
 package com.javaprojeto.workshopmongo.servicos;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,6 +28,10 @@ public class PublicacaoServico {
 	
 	public List<Publicacao> buscarTitulo(String texto){
 		return publicacaoRepo.buscarTitulo(texto);
+	}
+	
+	public List<Publicacao> buscaCompleta(String texto, Date dataInicio, Date dataFim){
+		return publicacaoRepo.buscaCompleta(texto, dataInicio, dataFim);
 	}
 	
 }
