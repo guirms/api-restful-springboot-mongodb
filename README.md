@@ -1,4 +1,4 @@
-### Projeto API Restful com Spring Boot e MongoDB<h1 align="center">Banco de dados MySQL manipulado com padrão de projeto DAO</h1>
+<h1 align="center">Projeto API Restful com Spring Boot, MongoDB e JPA</h1>
 
 >Status: Completo✔️
 
@@ -8,16 +8,17 @@
 
 ## Recursos utilizados:
 - JPA.
-- Postgree.
-- Maven.
-- PostGreeSQL.
-- Postman.
+- MongoDB.
 - Spring Boot.
+- Maven.
+- Postman.
+- Tratamento de exceções.
+- Query.
+- Agregados.
 - Boas práticas de instância. 
-- Instanciações no banco de dados.
 
 ## Funcionamento:
-- O projeto simula um sistema de uma empresa, que por sua vez tem pedidos, usuários, formas de pagamento, etc.. Foi um bom desafio pessoal e tenho certeza que servirá como experiência para o mercado profissional.
+- O projeto simula uma simples rede social, que por sua vez tem usuários, posts e comentários, onde cada post é referênciado por seu respectivo usuário... Aprendi bastante com esse projeto e espero que a partir dele eu possa criar novas API's cada vez mais bem desenvolvidas.
 
 
 
